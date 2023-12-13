@@ -1,18 +1,11 @@
-'use client'
-import styles from './page.module.css'
-import { useMemo } from 'react'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { themeSettings } from './theme'
-import { CssBaseline } from '@mui/material'
+'use client';
+import Dashboard from '@/scenes/dashboard/Dashboard';
+import styles from './page.module.css';
 
 export default function Home() {
-  const theme = useMemo(() => createTheme(themeSettings), [])
   return (
     <main className={styles.main}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        Hello
-     </ThemeProvider>
+      <Dashboard />
     </main>
-  )
+  );
 }
