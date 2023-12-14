@@ -21,9 +21,10 @@ export const addData = async () => {
   }
 };
 
-export const getData = async () => {
+export const getKpiData = async () => {
   const response = await fetch('http://localhost:3000/api/kpi');
 
   const data = await response.json();
-  console.log('data: ', data);
+
+  return data;
 };

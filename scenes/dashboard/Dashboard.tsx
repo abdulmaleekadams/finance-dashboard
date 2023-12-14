@@ -50,7 +50,7 @@ const gridTemplateMdScreens = `
     "j "
 `;
 
-const Dashboard = (props: Props) => {
+const Dashboard = ({KPIData}: any) => {
   const isAboveMdScreens = useMediaQuery('(min-width: 1200px)');
   const { palette } = useTheme();
   return (
@@ -73,7 +73,7 @@ const Dashboard = (props: Props) => {
             }
       }
     >
-      <Row1 />
+      <Row1 kpiData={KPIData} />
       <Row2 />
       <Row3 />
     </Box>
