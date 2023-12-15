@@ -28,3 +28,11 @@ export const getKpiData = async () => {
 
   return data;
 };
+
+export const getProductData = async () => {
+  const response = await fetch('http://localhost:3000/api/kpi');
+
+  const data = await response.json();
+
+  return data;
+};

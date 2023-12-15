@@ -1,11 +1,17 @@
+import connectToDb from '@/lib/connectToDb';
+import Product from '@/models/Product';
+import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
-import KPI from '@/models/KPI';
 
-export const GET = async (req: Request) => {
+export const GET = async () => {
   try {
-    const kpis = await KPI.find();
-    NextResponse.json({ message: 'success', data: kpis }, { status: 200 });
+    await connectToDb();
+    const data = await Product.find();
+    return NextResponse.json({ data: data }, { status: 200 });
   } catch (error) {
-    NextResponse.json({ message: 'Internal Server Errror' }, { status: 500 });
+    console.log(error);
+  } finally {
+    await mongoose.disconnect();
+    console.log('Database disconnected');
   }
 };

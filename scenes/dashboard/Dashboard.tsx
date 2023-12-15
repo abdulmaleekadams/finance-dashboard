@@ -51,7 +51,7 @@ const gridTemplateMdScreens = `
 `;
 
 const Dashboard = ({KPIData}: any) => {
-  const isAboveMdScreens = useMediaQuery('(min-width: 1200px)');
+  const isAboveMdScreens = useMediaQuery('(min-width: 1250px)');
   const { palette } = useTheme();
   return (
     <Box
@@ -63,7 +63,7 @@ const Dashboard = ({KPIData}: any) => {
         isAboveMdScreens
           ? {
               gridTemplateColumns: 'repeat(3, minmax(370px, 1fr))',
-              gridTemplateRows: 'repeat(10, minmax(100px, 1fr))',
+              gridTemplateRows: 'repeat(10, minmax(60px, 80px))',
               gridTemplateAreas: gridTemplateLgScreens,
             }
           : {
