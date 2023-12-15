@@ -44,7 +44,7 @@ const Row1 = ({ kpiData }: props) => {
         return {
           name: month.substring(0, 3),
           revenue: revenue,
-          profit: (parseFloat(revenue) - parseFloat(expenses)).toFixed(2),
+          profit: (revenue - expenses).toFixed(2),
         };
       })
     );
@@ -53,7 +53,7 @@ const Row1 = ({ kpiData }: props) => {
   const revenue = useMemo(() => {
     return (
       kpiData &&
-      kpiData[0].monthlyData.map(({ month, revenue, expenses }) => {
+      kpiData[0].monthlyData.map(({ month, revenue }) => {
         return {
           name: month.substring(0, 3),
           revenue: revenue,

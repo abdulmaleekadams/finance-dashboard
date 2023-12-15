@@ -6,7 +6,7 @@ loadType(mongoose);
 
 const daySchema = new Schema(
   {
-    day: String,
+    date: String,
     revenue: {
       type: mongoose.Types.Currency,
       currency: 'USD',
@@ -74,7 +74,7 @@ const KPISchema = new Schema(
       },
     },
     monthlyData: [monthSchema],
-    dailyyData: [daySchema],
+    dailyData: [daySchema],
   },
   { timestamps: true, toJSON: { getters: true } }
 );

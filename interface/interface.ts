@@ -1,33 +1,32 @@
 type MonthlyData = {
   month: string;
-  revenue: string;
-  expenses: string;
-  operationalExpenses: string;
-  nonOperationalExpenses: string;
+  revenue: number;
+  expenses: number;
+  operationalExpenses: number;
+  nonOperationalExpenses: number;
 };
 
 type DailyData = {
   date: string;
-  revenue: string;
-  expenses: string;
+  revenue: number;
+  expenses: number;
 };
 
 export type ExpensesByCategory = {
   salaries: number;
   supplies: number;
   services: number;
-}
+};
 
 export type KPIsDataItem = {
   _id: string;
-  totalProfit: string;
-  totalRevenue: string;
-  totalExpenses: string;
+  totalProfit: number;
+  totalRevenue: number;
+  totalExpenses: number;
   monthlyData: MonthlyData[];
   dailyData: DailyData[];
+  expensesByCategory: ExpensesByCategory;
 };
-
-
 
 export type ProductDataItem = {
   id: string;
@@ -38,9 +37,9 @@ export type ProductDataItem = {
   transactions: Array<string>;
   createdAt: string;
   updatedAt: string;
-}
+};
 
-export type TransactionsDataItem= {
+export type TransactionsDataItem = {
   id: string;
   _id: string;
   __v: number;
@@ -49,4 +48,4 @@ export type TransactionsDataItem= {
   productIds: Array<string>;
   createdAt: string;
   updatedAt: string;
-}
+};

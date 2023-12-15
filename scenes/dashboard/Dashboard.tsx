@@ -50,7 +50,7 @@ const gridTemplateMdScreens = `
     "j "
 `;
 
-const Dashboard = ({KPIData}: any) => {
+const Dashboard = ({ KPIData, productsData }: any) => {
   const isAboveMdScreens = useMediaQuery('(min-width: 1250px)');
   const { palette } = useTheme();
   return (
@@ -74,7 +74,7 @@ const Dashboard = ({KPIData}: any) => {
       }
     >
       <Row1 kpiData={KPIData} />
-      <Row2 />
+      <Row2 operationalData={KPIData} productData={productsData} />
       <Row3 />
     </Box>
   );
