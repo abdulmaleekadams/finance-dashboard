@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Row1 from './Row1';
 import Row2 from './Row2';
@@ -50,7 +50,7 @@ const gridTemplateMdScreens = `
     "j "
 `;
 
-const Dashboard = ({ KPIData, productsData }: any) => {
+const Dashboard = ({ KPIData, productsData, transactionsData }: any) => {
   const isAboveMdScreens = useMediaQuery('(min-width: 1250px)');
   const { palette } = useTheme();
   return (
@@ -75,7 +75,11 @@ const Dashboard = ({ KPIData, productsData }: any) => {
     >
       <Row1 kpiData={KPIData} />
       <Row2 operationalData={KPIData} productData={productsData} />
-      <Row3 />
+      <Row3
+        transactionsData={transactionsData}
+        kpiData={KPIData}
+        productsData={productsData}
+      />
     </Box>
   );
 };
