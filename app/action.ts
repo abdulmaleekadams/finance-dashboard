@@ -28,9 +28,10 @@ import mongoose from 'mongoose';
 //     await mongoose.disconnect();
 //   }
 // };
+const BASE_URL = process.env.BASE_URL
 
 export const getKpiData = async () => {
-  const response = await fetch('http://localhost:3000/api/kpi');
+  const response = await fetch(`${BASE_URL}/kpi`);
 
   const data = await response.json();
 
@@ -38,7 +39,7 @@ export const getKpiData = async () => {
 };
 
 export const getProductData = async () => {
-  const response = await fetch('http://localhost:3000/api/product');
+  const response = await fetch(`${BASE_URL}/product`);
 
   const data = await response.json();
 
@@ -46,7 +47,7 @@ export const getProductData = async () => {
 };
 
 export const getTransactionsData = async () => {
-  const response = await fetch('http://localhost:3000/api/transaction');
+  const response = await fetch(`${BASE_URL}/transaction`);
 
   const data = await response.json();
 

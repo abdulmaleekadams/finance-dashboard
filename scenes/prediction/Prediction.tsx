@@ -68,7 +68,7 @@ const Prediction = ({ kpiData }: props ) => {
           Show Predicted Revenue for Next Year
         </Button>
       </FlexBetween>
-      <ResponsiveContainer width='100%' height='100%'>
+      <ResponsiveContainer width='100%' height='100%' minHeight={'100vh'}>
         <LineChart
           data={formattedData}
           margin={{
